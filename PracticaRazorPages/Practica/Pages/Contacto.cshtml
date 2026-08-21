@@ -1,0 +1,19 @@
+﻿@page
+@model Practica.Pages.ContactoModel
+@{
+}
+
+<div class="text-bg-info">@TempData["Mensaje"]</div>
+
+<form method="post">
+    <label asp-for="Formulario.Nombre"></label>
+    <input asp-for="Formulario.Nombre"/>
+
+    <label asp-for="Formulario.Email"></label>
+    <input asp-for="Formulario.Email"/>
+
+    <label asp-for="Formulario.Mensaje"></label>
+    <input asp-for="Formulario.Mensaje"/>
+
+    <input type="submit" name="btnEnviar" value="Enviar"/>
+</form>
