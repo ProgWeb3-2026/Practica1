@@ -1,0 +1,37 @@
+﻿@page
+@model PracticaRazorPages.Pages.ContactoModel
+@{
+}
+
+<div class="text-bg-info">@TempData["Mensaje"]</div>
+
+<form method="post">
+
+    <div>
+        <label>Nombre:</label>
+        <input type="text" asp-for="Contacto.Nombre" />
+    </div>
+
+    <br>
+
+    <div>
+        <label asp-for="Contacto.Nombre">Email:</label>
+        <input asp-for="Contacto.Email" />
+    </div>
+
+    <br>
+
+    <div>
+        <label asp-for="Contacto.Mensaje"></label>
+        <textarea asp-for="Contacto.Mensaje"></textarea>
+    </div>
+
+    <br>
+
+    <button type="submit">
+        Enviar
+    </button>
+
+</form>
+
+
