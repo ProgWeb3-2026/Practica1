@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="bg-dark text-white py-4 mb-4">
+    <div class="container">
+        <h1 class="display-5 fw-bold">Portal Estudiantil</h1>
+        <p class="lead opacity-90">
+            Ingenieria en sistemas -- Universidad Privada del valle
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row g-3">
+        <div class="col-md-4">
+            <a asp-page="/Demos/Handlers" class="card text-decoration-none h-100">
+                <div class="card-body text-center">
+                    <div class="fs-1">6</div>
+                    <h6 class="mt-2">Materias registradas</h6>
+      
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-page="/Demos/FormBinding" class="card text-decoration-none h-100">
+                <div class="card-body text-center">
+                    <div class="fs-1">5</div>
+                    <h6 class="mt-2">Activas este semestre</h6>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-page="/Demos/TempData" class="card text-decoration-none h-100">
+                <div class="card-body text-center">
+                    <div class="fs-1">4</div>
+                    <h6 class="mt-2">Semestre Cubiertos</h6>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

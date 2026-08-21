@@ -1,0 +1,32 @@
+﻿@page
+@model PracticaRazorPages.Pages.ContactoModel
+@{
+}
+@if (TempData["Mensajes"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Mensajes"]
+    </div>
+}
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Formulario.Nombre" class="form-label fw-semibold"></label>
+        <input asp-for="Formulario.Nombre" class="form-control" placeholder="Tu nombre" />
+
+        <span asp-validation-for="Formulario.Nombre" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Formulario.Email" class="form-label fw-semibold"></label>
+        <input asp-for="Formulario.Email" class="form-control" placeholder="correo@@dominio.com" />
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Formulario.Mensaje" class="form-label fw-semibold"></label>
+        <input asp-for="Formulario.Mensaje" class="form-control" placeholder="Mensaje" />
+
+    </div>
+
+    <input type="submit" name="btnEnviar" value="Registrar" />  
+</form>
