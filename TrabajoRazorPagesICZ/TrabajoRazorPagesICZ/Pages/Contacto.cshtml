@@ -1,0 +1,27 @@
+﻿@page
+@model TrabajoRazorPagesICZ.Pages.ContactoModel
+@{
+    ViewData["Title"] = "Contacto";
+}
+
+<div class="text-bg-info">@TempData["Mensaje"]</div>
+
+<h2>Contacto</h2>
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Formulario.Nombre"></label>
+        <input asp-for="Formulario.Nombre" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Formulario.Email"></label>
+        <input asp-for="Formulario.Email" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Formulario.Mensaje"></label>
+        <input asp-for="Formulario.Mensaje" />
+    </div>
+
+    <input type="submit" name="Enviar" value="Enviar" />
+    
+</form>
+
