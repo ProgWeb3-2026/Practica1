@@ -1,0 +1,27 @@
+﻿@page
+@model PracticaRazorPages.Pages.ContactoModel
+@{
+}
+
+<div class="container mt-4">
+    <h2>Formulario de Contacto</h2>
+
+    <form method="post" class="mt-3">
+        <div class="mb-3">
+            <label asp-for="Formulario.nombre" class="form-label">Nombre</label>
+            <input asp-for="Formulario.nombre" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Formulario.email" class="form-label">Email</label>
+            <input asp-for="Formulario.email" type="email" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Formulario.mensaje" class="form-label">Mensaje</label>
+            <textarea asp-for="Formulario.mensaje" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
