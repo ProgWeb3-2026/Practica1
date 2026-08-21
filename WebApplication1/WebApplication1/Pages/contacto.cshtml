@@ -1,0 +1,23 @@
+﻿@page
+@model WebApplication1.Pages.contactoModel
+@{
+}
+
+<div class="text-bg-info">@TempData["mensaje"]</div>
+
+
+<form method="post">
+
+    <label asp-for="formulario.nombre"></label>
+    <input asp-for="formulario.nombre"/><br>
+
+    <label asp-for="formulario.email"></label>
+    <input asp-for="formulario.email" /><br />
+
+    <label asp-for="formulario.mensaje"></label>
+    <input asp-for="formulario.mensaje" /><br />
+
+    <input type="submit" name="BtnEnviar" value="enviar"/>
+
+
+</form>
