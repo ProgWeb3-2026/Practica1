@@ -1,0 +1,27 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.IndexModel
+@{
+}
+
+
+<h1>Bienvenido Usuario a tu modulo de Plantas</h1>
+
+@foreach (var planta in Model.ListaPlantas)
+{
+    <div class="card" style="width: 18rem;">
+        <img src="@planta.Foto" class="card-img-top" alt="@planta.NombreComun">
+        @if (!string.IsNullOrWhiteSpace(planta.Foto))
+        {
+            <img src="@planta.Foto" class="card-img-top" alt="@planta.NombreComun">
+        }
+        else
+        {
+            <img src="~/img/planta.jpg" class="card - img - top" alt="@planta.NombreComun"/>
+        }
+        <div class="card-body">
+            <h3 class="card-title">@planta.NombreComun</h3>
+            <h5>@planta.NombreCientifico</h5>
+        </div>
+
+    </div>
+}
