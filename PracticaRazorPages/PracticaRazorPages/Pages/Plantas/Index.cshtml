@@ -1,0 +1,27 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.IndexModel
+@{
+}
+
+<h2>Bienvenido Usuario a tu modulo de plantas</h2>
+
+
+@foreach (var planta in Model.Plantas)
+{
+    <div class="card" style="width: 18rem;">
+        @if (!string.IsNullOrWhiteSpace(planta.Foto))
+        {
+            <img src="@planta.Foto" class="card-img-top" alt="@planta.NombreComun">
+        }
+        else
+        {
+            <img src="~/imagenes/planta.jpg" class="card-img-top" alt="^@planta.NombreComun">
+        }
+        <div class="card-body">
+            <h3 class="card-text">@planta.NombreComun</h3>
+            <h5 class="card-title">@planta.NombreCientifico</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+}
