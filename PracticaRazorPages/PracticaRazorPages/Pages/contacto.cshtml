@@ -1,0 +1,22 @@
+﻿@page
+@model PracticaRazorPages.Pages.contactoModel
+@{
+}
+
+<div class="text-bg-info">@TempData["mensaje"]</div>
+
+<form method="post">
+    <div class="form-group">
+    <label asp-for="formulario.nombre"></label>
+    <input asp-for="formulario.nombre"/>
+
+    <label asp-for="formulario.email"></label>
+    <input asp-for="formulario.email" />
+
+    <label asp-for="formulario.mensaje"></label>
+    <input asp-for="formulario.mensaje" />
+
+    </div>
+
+    <imput type="submit" name="Btnemviar" value="enviar" />
+</form>
