@@ -13,6 +13,8 @@ namespace PracticaRazorPages.Pages.Plantas
         {
             ListaPlantas = new List<ModeloPlanta>();
             ListaPlantas.Add(new ModeloPlanta() { NombreComun = "Toborochi", NombreCientifico = "Toborochi el mas gordo de todos", Foto= "https://server-bucket-2022.s3.amazonaws.com/travelapp/dd195afd822c21116c2f7da61ec792c6_1687126554710.jpeg" });
+            ListaPlantas.Add(new ModeloPlanta() { NombreComun = "Mango", NombreCientifico = "El mango mongolia" });
+
         }
     }
 }
