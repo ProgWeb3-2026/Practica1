@@ -1,0 +1,25 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.IndexModel
+@{
+}
+
+<h2>Bienvenido Mobito el mas bonito y hermosito</h2>
+
+@foreach (var planta in Model.ListaPlantas)
+{
+    <div class="card" style="width: 18rem;">
+        @if (!string.IsNullOrWhiteSpace(planta.Foto))
+        {
+            <img src="@planta.Foto" class="card-img-top" alt="@planta.NombreComun">
+        }
+        else
+        {
+            <img src="~/imagenes/guisantralladora-plants-zoombies.png" class="card-img-top" alt="@planta.NombreComun">
+        }
+        <div class="card-body">
+            <p class="card-text">@planta.NombreComun</p>
+            <h5>@planta.NombreCientifico</h5>
+        </div>
+
+    </div>
+}
