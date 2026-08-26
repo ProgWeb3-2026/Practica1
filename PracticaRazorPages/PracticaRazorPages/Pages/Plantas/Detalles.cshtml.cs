@@ -5,20 +5,23 @@ using PracticaRazorPages.Models;
 
 namespace PracticaRazorPages.Pages.Plantas
 {
-    public class IndexModel : PageModel
+    public class DetallesModel : PageModel
     {
 
         private readonly ServicioPlantas _servicioPlantas;
-        public IndexModel(ServicioPlantas servicioPlantas) 
+        public DetallesModel(ServicioPlantas servicioPlantas)
         {
             _servicioPlantas = servicioPlantas;
         }
 
-        public List<ModeloPlanta> Plantas {  get; set; }
+        public ModeloPlanta Planta {  get; set; }
+       
 
-        public void OnGet()
+        public void OnGet(int id)
         {
-            Plantas = _servicioPlantas.Obtener();
+            var plantas = _servicioPlantas.Obtener();
+            Planta = plantas.FirstOrDefault(x=> x.PlantaId == id);
+
         }
     }
 }
