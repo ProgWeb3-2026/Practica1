@@ -1,0 +1,17 @@
+﻿@page
+@model WebApplication1.Pages.plantas.detalleModel
+@{
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.planta.foto))
+{
+    <img src="@Model.planta.foto" class="card-img-top" alt="@Model.planta.nombrecomun">
+}
+else
+{
+    <img src="~/imagenes/planta.jpg class="card - img - top" alt="@Model.planta.nombrecomun">
+    }
+    <div class="card-body">
+        <h3 class="card-text">@Model.planta.nombrecomun</h3>
+        <h5>@Model.planta.nombrecientifico</h5>
+    </div>

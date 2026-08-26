@@ -1,0 +1,41 @@
+﻿@page
+@model WebApplication1.Pages.plantas.edicionModel
+@{
+}
+
+
+<form>
+    <input asp-for="Planta.plantaId" type="hidden"/>
+    <div class="mb-3">
+        <label asp-for="Planta.nombrecomun" class="form-label">nombre comun</label>
+         <input asp-for="Planta.nombrecomun" class="form-control" placeholder="nombre comun">nombre comun>
+</div>
+
+
+    <div class="mb-3">
+        <label asp-for="Planta.nombrecientifico" class="form-label">nombre comun</label>
+        <input asp-for="Planta.nombrecientifico" class="form-control" placeholder="nombre comun">nombre comun>
+        </div>
+
+
+        <div class="mb-3">
+            <label asp-for="Planta.categoria" class="form-label">nombre comun</label>
+            <input asp-for="Planta.categoria" class="form-control" placeholder="nombre comun">nombre comun>
+            </div>
+
+
+            <div class="mb-3">
+                <label asp-for="Planta.correoEncargado" class="form-label">nombre comun</label>
+                <input asp-for="Planta.correoEncargado" class="form-control" placeholder="nombre comun">nombre comun>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Planta.foto" class="form-label">nombre comun</label>
+                    <input asp-for="Planta.foto" class="form-control" placeholder="nombre comun">nombre comun>
+                    </div>
+
+
+                <button type="submit" value="guardar" name="btnguardar"></button>
+
+
+</form>

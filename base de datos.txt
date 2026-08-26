@@ -1,0 +1,71 @@
+--ejercicio 1 
+CREATE OR REPLACE TYPE producto_obj AS OBJECT (
+    codigo NUMBER,
+    nombre VARCHAR2(100),
+    precio NUMBER(10,2),
+
+    MEMBER PROCEDURE mostrar_datos
+);
+
+
+CREATE OR REPLACE TYPE BODY producto_obj AS
+
+    MEMBER PROCEDURE mostrar_datos IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('CODIGO DEL PRODUCTO: ' || codigo);
+        DBMS_OUTPUT.PUT_LINE('NOMBRE DEL PRODUCTO: ' || nombre);
+        DBMS_OUTPUT.PUT_LINE('PRECIO DEL PRODUCTO: ' || precio);
+    END mostrar_datos;
+
+END;
+
+
+DECLARE
+    producto producto_obj;
+BEGIN
+
+    producto := producto_obj(
+        101,
+        'Laptop Lenovo',
+        3500.50
+    );
+
+    producto.mostrar_datos;
+END;
+--crear un tipo objeto llamado estudiante_obj 
+--debe tener los siguientes metodos
+
+--ejercicio 2 
+CREATE OR REPLACE TYPE estudiante_obj AS OBJECT (
+    nombre varchar2(100),
+    carrera varchar2(100),
+    edad number,
+    promedio number,
+
+    MEMBER PROCEDURE mostrar_datos
+);
+
+CREATE OR REPLACE TYPE BODY estudiante_obj AS
+
+    MEMBER PROCEDURE mostrar_datos IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('NOMBRE DEL ESTUDIANTE: ' || nombre);
+        DBMS_OUTPUT.PUT_LINE('CARRERA DEL ESTUDIANTE: ' || carrera);
+        DBMS_OUTPUT.PUT_LINE('EDAD DEL ESTUDIANTE: ' || edad);
+        DBMS_OUTPUT.PUT_LINE('PROMEDIO DEL ESTUDIANTE: ' || promedio);
+    END mostrar_datos;
+
+END;
+
+
+DECLARE
+    estudiante estudiante_obj;
+begin 
+    estudiante := estudiante_obj(
+        'angel',
+        'sistemas',
+        20,
+        99
+    );
+    estudiante.mostrar_datos;
+end;
