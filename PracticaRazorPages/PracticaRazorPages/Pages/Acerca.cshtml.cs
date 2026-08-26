@@ -8,6 +8,7 @@ namespace PracticaRazorPages.Pages
     {
         public void OnGet()
         {
+
         }
     }
 }

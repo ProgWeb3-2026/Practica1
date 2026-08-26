@@ -1,7 +1,13 @@
+using Practica1Solucion.Servicios;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+//  -------------- Inicializa la clase servicios plantas, 
+// ------- Singlenton hace que 
+builder.Services.AddSingleton<ServicioPlantas>();
 
 var app = builder.Build();
 
