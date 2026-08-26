@@ -1,0 +1,21 @@
+﻿@page
+@model TrabajoRazorPagesICZ.Pages.Plantas.ModeloDetalladoPlantasModel
+@{
+}
+
+Detalles de la planta son los siguientes:
+
+@if (!string.IsNullOrWhiteSpace(@Model.Planta.Foto))
+{
+    <img src="@Model.Planta.Foto" class="card-img-top" alt="@Model.Planta.NombreComun" />
+}
+else
+{
+    <img src="~/images/planta.jfif" class="card - img - top" alt="@Model.Planta.NombreComun" />
+}
+
+
+<div class="card-body">
+    <h3 class="card-text">@Model.Planta.NombreComun</h3>
+    <p>@Model.Planta.NombreCientifico</p>
+</div>

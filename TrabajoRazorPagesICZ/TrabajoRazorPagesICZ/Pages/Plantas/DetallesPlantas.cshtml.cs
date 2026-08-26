@@ -5,18 +5,20 @@ using TrabajoRazorPagesICZ.Pages.Plantas.Servicios;
 
 namespace TrabajoRazorPagesICZ.Pages.Plantas
 {
-    public class IndexModel : PageModel
+    public class ModeloDetalladoPlantasModel : PageModel
     {
         private readonly ServicioPlantas _servicioPlantas;
-        public IndexModel(ServicioPlantas servicioPlantas)
+        public ModeloDetalladoPlantasModel(ServicioPlantas servicioPlantas)
         {
             this._servicioPlantas = servicioPlantas;
         }
+        public ModeloPlanta Planta { get; set; }
 
-        public List<ModeloPlanta> Plantas { get; set; }
-        public void OnGet()
+        public int Id { get; set; }
+        public void OnGet(int id)
         {
-            Plantas = _servicioPlantas.Obtener();
+            var plantas = _servicioPlantas.Obtener();
+            Planta = plantas.FirstOrDefault(x=> x.PlantaId == id);
         }
     }
 }

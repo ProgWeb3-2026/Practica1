@@ -1,7 +1,11 @@
+using TrabajoRazorPagesICZ.Pages.Plantas.Servicios;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddSingleton<ServicioPlantas>();
 
 var app = builder.Build();
 
