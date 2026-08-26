@@ -1,0 +1,19 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.DeallesModel
+@{
+
+}
+
+@if (!string.IsNullOrWhiteSpace(@Model.Planta.Foto))
+{
+    <img src="@Model.Planta.Foto" class="card-img-top" alt="planta.NombreComun">
+}
+else
+{
+    <img src="~/imagenes/628324.png" class="card-img-top" alt="planta.NombreComun">
+}
+<div class="card-body">
+    <h3 class="card-text">@Model.Planta.NombreComun</h3>
+    <h5>@Model.Planta.NombreCientifico</h5>
+
+</div>
