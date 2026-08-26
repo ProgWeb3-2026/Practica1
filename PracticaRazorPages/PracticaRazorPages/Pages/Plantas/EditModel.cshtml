@@ -1,0 +1,28 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.EditModelModel
+@{
+}
+
+<form method="post">
+    <input asp-for="Planta.PlantaId" type="hidden">
+    <div class="mb-3">
+        <label asp-for="Planta.NombreComun" class="form-label">Nombre Comun: </label>
+        <input asp-for="Planta.NombreComun" class="form-control" placeholder="Nombre Comun">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Planta.NombreCientifico" class="form-label">Nombre Cientifico</label>
+        <input asp-for="Planta.NombreCientifico" class="form-control" placeholder="Nombre Cientifico">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Planta.Categoria" class="form-label">Categoria: </label>
+        <input asp-for="Planta.Categoria" class="form-control" placeholder="Categoria">
+    </div class="mb-3">
+    <label asp-for="Planta.CorreoEncargado" class="form-label">Correo Encargado:</label>
+    <input asp-for="Planta.CorreoEncargado" class="form-control" placeholder="Correo encargado">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Planta.Foto" class="form-label">Imagen Foto</label>
+        <input asp-for="Planta.Foto" class="form-control" placeholder="Imagen Foto">
+    </div>
+    <button type="submit" value="Guardar" name="btnGuardar">Guardar</button>
+</form>
