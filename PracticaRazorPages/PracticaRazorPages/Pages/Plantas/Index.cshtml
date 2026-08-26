@@ -3,9 +3,9 @@
 @{
 }
 
-<h2>Bienvenido Mobito el mas bonito y hermosito</h2>
+<h2>He aqui todas las plantas que te puedas imaginar</h2>
 
-@foreach (var planta in Model.ListaPlantas)
+@foreach (var planta in Model.Plantas)
 {
     <div class="card" style="width: 18rem;">
         @if (!string.IsNullOrWhiteSpace(planta.Foto))
@@ -21,5 +21,10 @@
             <h5>@planta.NombreCientifico</h5>
         </div>
 
+        <button href="" type="button" class="btn btn-warning">Ver detalles</button>
+        <button type="button" class="btn btn-success">Editar</button>
+
+
     </div>
+    <br>
 }

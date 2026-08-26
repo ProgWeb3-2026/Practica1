@@ -1,0 +1,21 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.DetallesModel
+@{
+}
+
+
+@foreach (var planta in @Model.Planta.Foto)
+{
+    @if (!string.IsNullOrWhiteSpace(Model.Planta.Foto))
+    {
+        <img src="@planta." class="card-img-top" alt="@Model.Planta.NombreComun">
+    }
+    else
+    {
+        <img src="~/imagenes/guisantralladora-plants-zoombies.png" class="card-img-top" alt="@Model.Planta.NombreComun">
+    }
+    <div class="card-body">
+        <p class="card-text">@Model.Planta.NombreComun</p>
+        <h5>@Model.Planta.NombreCientifico</h5>
+    </div>
+}

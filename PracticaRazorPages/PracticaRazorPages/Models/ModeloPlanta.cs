@@ -5,7 +5,7 @@ namespace PracticaRazorPages.Models
 {
     public class ModeloPlanta
     {
-        public string PlantaID { get; set; }
+        public int PlantaID { get; set; }
 
         [Required(ErrorMessage = "El campo es requerido")]
         [StringLength(200, ErrorMessage = "El campo debe ser entre 0 o 200")]
