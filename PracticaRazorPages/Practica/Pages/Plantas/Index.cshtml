@@ -1,0 +1,25 @@
+﻿@page
+@model Practica.Pages.Plantas.IndexModel
+@{
+}
+
+<h2>Bienvenido Usuario a tu Modelo de plantas</h2>
+
+@foreach (var Planta in Model.Plantas)
+{
+    <div class="card" style="width: 18rem;">
+        @if (!string.IsNullOrWhiteSpace(Planta.foto)) /*!para negar que no esta vacio o tenga espacio vacio pondra la imgane normal*/
+        {
+            <img src="@Planta.foto" class="card-img-top" alt="@Planta.NombreComun" />
+        }
+        else
+        {
+            <img src="~/imagenes/Planta.jpg" class="card-img-top" alt="@Planta.NombreComun" />
+        }
+
+        <div class="Card-text">
+            <h3 class="card-text">@Planta.NombreComun</h3>
+            <h5>@Planta.NombreCientifico</h5>
+        </div>
+    </div>
+}
