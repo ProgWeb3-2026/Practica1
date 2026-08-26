@@ -2,21 +2,22 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Practica1Solucion.Servicios;
 using PracticaRazorPages.Models;
+
 namespace PracticaRazorPages.Pages.Plantas
 {
-    public class IndexModel : PageModel
+    public class DetalleModel : PageModel
     {
         private readonly ServicioPlantas _servicioPlantas;
 
-        public IndexModel(ServicioPlantas servicioPlantas)
+        public DetalleModel (ServicioPlantas servicioPlantas)
         {
             _servicioPlantas = servicioPlantas;
         }
-        public List<ModeloPlanta> Plantas { get; set; }
-        public void OnGet()
+        public ModeloPlanta Planta { get; set; }
+        public void OnGet( int id)
         {
-            Plantas = _servicioPlantas.Obtener();
-           
+            var plantas = _servicioPlantas.Obtener();
+            Planta = plantas.First(x=> x.PlantaId == id);
         }
     }
 }
