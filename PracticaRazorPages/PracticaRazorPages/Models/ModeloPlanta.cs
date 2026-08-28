@@ -17,8 +17,8 @@ namespace PracticaRazorPages.Models
 
         public string Categoria { get; set; }
 
-        [Required]
-        [EmailAddress]
+        [Required (ErrorMessage = "El correo es obligatorio")]
+        [EmailAddress(ErrorMessage = "Se requiere un correo electrónico válido")]
         public string CorreoEncargado { get; set; }
 
         public string Foto { get; set; }

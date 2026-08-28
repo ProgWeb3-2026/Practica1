@@ -4,6 +4,8 @@
 }
 
 <h2>He aqui todas las plantas que te puedas imaginar</h2>
+<a class="btn btn-success" asp-area="" asp-page="/Plantas/Crear">Crear</a>
+
 
 @foreach (var planta in Model.Plantas)
 {
@@ -20,9 +22,24 @@
             <p class="card-text">@planta.NombreComun</p>
             <h5>@planta.NombreCientifico</h5>
         </div>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
 
-        <button href="" type="button" class="btn btn-warning">Ver detalles</button>
-        <button type="button" class="btn btn-success">Editar</button>
+            <a class="btn btn-info" asp-area="" asp-route-id="@planta.PlantaID" asp-page="/Plantas/Edit">Editar</a>
+
+            <a class="btn btn-warning" asp-area="" asp-route-id="@planta.PlantaID" asp-page="/Plantas/Detalles">Ver</a>
+
+            <form method="post" asp-page-handler="Eliminar" asp-route-id="@planta.PlantaID" style="display:inline;">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('¿Seguro que deseas eliminar esta planta?');">
+                    Eliminar
+                </button>
+            </form>
+
+
+
+            
+        </div>
+        
+
 
 
     </div>

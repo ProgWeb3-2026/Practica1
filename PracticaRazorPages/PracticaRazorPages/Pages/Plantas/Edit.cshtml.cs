@@ -14,12 +14,13 @@ namespace PracticaRazorPages.Pages.Plantas
             _servicioPlantas = serviciosPlantas;
         }
 
-        public ModeloPlanta Planta { get; set; }
+        [BindProperty]
+        public ModeloPlanta Planta { get; set; } = new ModeloPlanta();
+
         public void OnGet(int id)
         {
             var plantas = _servicioPlantas.Obtener();
             Planta = plantas.FirstOrDefault(x => x.PlantaID == id);
-
         }
 
         public IActionResult OnPost()
@@ -29,6 +30,10 @@ namespace PracticaRazorPages.Pages.Plantas
                 var plantas = _servicioPlantas.Obtener();
                 var planta = plantas.FirstOrDefault(x => x.PlantaID == Planta.PlantaID);
 
+                if (planta == null)
+                {
+                    return NotFound();
+                }
 
                 planta.NombreCientifico = Planta.NombreCientifico;
                 planta.NombreComun = Planta.NombreComun;

@@ -1,0 +1,43 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.CrearModel
+@{
+    ViewData["Title"] = "Crear Planta";
+}
+
+<h2>Crear Nueva Planta</h2>
+
+<form method="post">
+
+    <div class="mb-3">
+        <label asp-for="Planta.NombreComun" class="form-label">Nombre Común</label>
+        <input asp-for="Planta.NombreComun" class="form-control" placeholder="Nombre Común" />
+        <span asp-validation-for="Planta.NombreComun" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.NombreCientifico" class="form-label">Nombre Científico</label>
+        <input asp-for="Planta.NombreCientifico" class="form-control" placeholder="Nombre Científico" />
+        <span asp-validation-for="Planta.NombreCientifico" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.Categoria" class="form-label">Categoría</label>
+        <input asp-for="Planta.Categoria" class="form-control" placeholder="Categoría" />
+        <span asp-validation-for="Planta.Categoria" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.CorreoEncargado" class="form-label">Correo Encargado</label>
+        <input asp-for="Planta.CorreoEncargado" class="form-control" placeholder="Correo Encargado" />
+        <span asp-validation-for="Planta.CorreoEncargado" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.Foto" class="form-label">Foto (URL o Ruta)</label>
+        <input asp-for="Planta.Foto" class="form-control" placeholder="URL de la imagen" />
+        <span asp-validation-for="Planta.Foto" class="text-danger small"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar Planta</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>

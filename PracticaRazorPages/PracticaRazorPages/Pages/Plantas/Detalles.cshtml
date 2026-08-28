@@ -1,21 +1,30 @@
-﻿@page
+﻿@page "{id:int}"
 @model PracticaRazorPages.Pages.Plantas.DetallesModel
 @{
 }
 
+<a asp-page="Index" class="btn btn-secondary">Volver</a><br>
 
-@foreach (var planta in @Model.Planta.Foto)
+
+@if (Model.Planta != null)
 {
-    @if (!string.IsNullOrWhiteSpace(Model.Planta.Foto))
-    {
-        <img src="@planta." class="card-img-top" alt="@Model.Planta.NombreComun">
-    }
-    else
-    {
-        <img src="~/imagenes/guisantralladora-plants-zoombies.png" class="card-img-top" alt="@Model.Planta.NombreComun">
-    }
-    <div class="card-body">
-        <p class="card-text">@Model.Planta.NombreComun</p>
-        <h5>@Model.Planta.NombreCientifico</h5>
+    <div class="card" style="width: 18rem;">
+        @if (!string.IsNullOrWhiteSpace(Model.Planta.Foto))
+        {
+            <img src="@Model.Planta.Foto" class="card-img-top" alt="Foto de la planta">
+        }
+        else
+        {
+            <img src="~/imagenes/guisantralladora.png" class="card-img-top" alt="Imagen por defecto">
+        }
+
+        <div class="card-body">
+            <p class="card-text">@Model.Planta.NombreComun</p>
+            <h5 class="card-title">@Model.Planta.NombreCientifico</h5>
+        </div>
     </div>
+}
+else
+{
+    <p class="text-danger">No se encontró la planta solicitada.</p>
 }
