@@ -4,7 +4,7 @@
 }
 
 <h2>Bienvenido Usuario a tu modulo de plantas</h2>
-
+<a asp-page='CrearPlanta' class="btn btn-primary">Crear planta</a>
 
 @foreach (var planta in Model.Plantas)
 {
@@ -18,10 +18,17 @@
             <img src="~/imagenes/planta.jpg" class="card-img-top" alt="^@planta.NombreComun">
         }
         <div class="card-body">
+            <a asp-page='DetallePlanta' asp-route-id="@planta.PlantaId">
             <h3 class="card-text">@planta.NombreComun</h3>
+            </a>
             <h5 class="card-title">@planta.NombreCientifico</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a asp-page='EditModel' asp-route-id="@planta.PlantaId" class="btn btn-primary">Editar</a>
+            <form method="post" asp-page-handler="Eliminar" asp-route-id="@planta.PlantaId" style="display:inline;">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('¿Seguro que deseas eliminar esta planta?');">
+                    Eliminar
+                </button>
+            </form>
         </div>
     </div>
 }

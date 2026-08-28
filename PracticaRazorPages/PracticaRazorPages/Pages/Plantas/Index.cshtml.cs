@@ -19,5 +19,18 @@ namespace PracticaRazorPages.Pages.Plantas
         {
             Plantas = _servicioPlantas.Get();   
         }
+        public IActionResult OnPostEliminar(int id)
+        {
+            var plantas = _servicioPlantas.Get();
+
+            var plantaBorrar = plantas.FirstOrDefault(x => x.PlantaId == id);
+
+            if (plantaBorrar != null)
+            {
+                plantas.Remove(plantaBorrar);
+            }
+
+            return RedirectToPage();
+        }
     }
 }

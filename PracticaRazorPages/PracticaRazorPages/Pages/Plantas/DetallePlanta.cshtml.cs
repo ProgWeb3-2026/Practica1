@@ -19,7 +19,7 @@ namespace PracticaRazorPages.Pages.Plantas
             var plantas = _servicioPlantas.Get();
             Planta = plantas.FirstOrDefault(x => x.PlantaId == id);
 
-        }
 
+        }
     }
 }

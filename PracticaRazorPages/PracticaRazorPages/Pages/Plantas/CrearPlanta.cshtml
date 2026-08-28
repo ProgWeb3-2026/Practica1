@@ -1,10 +1,9 @@
 ﻿@page
-@model PracticaRazorPages.Pages.Plantas.EditModelModel
+@model PracticaRazorPages.Pages.Plantas.CrearPlantaModel
 @{
 }
 
 <form method="post">
-    <input asp-for="Planta.PlantaId" type="hidden">
     <div class="mb-3">
         <label asp-for="Planta.NombreComun" class="form-label">Nombre Comun: </label>
         <input asp-for="Planta.NombreComun" class="form-control" placeholder="Nombre Comun">
@@ -37,3 +36,4 @@
     <button type="submit" value="Guardar" name="btnGuardar">Guardar</button>
     <a type="submit" asp-page="Index" value="Guardar" name="btnGuardar">volver al inicio</a>
 </form>
+
