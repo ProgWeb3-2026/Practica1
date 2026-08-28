@@ -6,6 +6,9 @@
 
 <h2>Bienvenido Usuario a tu Modelo de plantas</h2>
 
+<a  asp-area="" asp-page="Crear" class="link-info form-control">Crear Planta</a>
+
+
 @foreach (var Planta in Model.Plantas)
 {
     <div class="card" style="width: 18rem;">
@@ -18,9 +21,15 @@
             <img src="~/imagenes/planta.jfif" class="card-img-top" alt="@Planta.NombreComun" />
         }
 
-        <div class="Card-text" > 
-            <h3 class="card-text">@Planta.NombreComun</h3>
+        <div class="card-body" >
+            <a asp-area="" asp-page="Detalle" asp-route-id="@Planta.PlantaId">
+                <h3 class="card-text">@Planta.NombreComun</h3>
+            </a>
+
+            <a asp-area="" asp-page="Edicion" asp-route-id="@Planta.PlantaId" class="link-info form-control">Editar</a>
             <h5>@Planta.NombreCientifico</h5>
+
+
         </div>
     </div>
 }
