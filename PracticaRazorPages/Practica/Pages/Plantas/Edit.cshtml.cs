@@ -37,7 +37,7 @@ namespace Practica.Pages.Plantas
                 planta.foto = Planta.foto;
 
                 _servicioPlantas.Get().Add(Planta);
-                return RedirectToPage();
+                return RedirectToPage("Index");
             }
             return Page();
         }
