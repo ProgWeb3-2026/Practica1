@@ -27,21 +27,27 @@ namespace PracticaRazorPages.Pages.Plantas
 
         public IActionResult OnPost()
         {
-           if (ModelState.IsValid)
-           {
-                var planta = _servicioPlantas.Obtener();
-                Planta = planta.First(x => x.PlantaId == Planta.PlantaId);
+            if (ModelState.IsValid)
+            {
+                // 1. Obtienes el listado completo de la base de datos/servicio
+                var listaPlantas = _servicioPlantas.Obtener();
 
-                planta.NombreCientifico = Planta.NombreCientifico;
-                planta.NombreComun = Planta.NombreComun;
-                planta.CorreoEncargado = Planta.CorreoEncargado;
-                planta.Categoria = Planta.Categoria;
-                planta.Foto = Planta.Foto;
+                // 2. Buscas la planta específica que coincide con el ID enviado por el formulario
+                var plantaBd = listaPlantas.First(x => x.PlantaId == Planta.PlantaId);
+
+                // 3. Le pasas los datos del formulario (Planta) al objeto de la Base de Datos (plantaBd)
+                plantaBd.NombreCientifico = Planta.NombreCientifico;
+                plantaBd.NombreComun = Planta.NombreComun;
+                plantaBd.CorreoEncargado = Planta.CorreoEncargado;
+                plantaBd.Categoria = Planta.Categoria;
+                plantaBd.Foto = Planta.Foto;
+
+                // 4. (Opcional) Recuerda guardar los cambios en tu servicio si es necesario
+                // _servicioPlantas.GuardarCambios(); 
 
                 return RedirectToPage("Index");
-                
-               
-           }
+            }
+
 
             return Page();
         }
