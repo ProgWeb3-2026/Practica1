@@ -1,0 +1,36 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.IndexModel
+@{
+}
+
+<h2>Bienvenido Usuario a tu modulo de plantas</h2>
+
+
+<button type="submit" name="btncrear"><a asp-page="Crear">Crear</a></button>
+@foreach (var planta in Model.Plantas)
+{
+    <div class="card" style="width: 18rem;">
+        @if (!string.IsNullOrWhiteSpace(planta.Foto))
+        {
+            <img src="@planta.Foto" class="card-img-top" alt="@planta.NombreComun">
+        }
+        else
+        {
+            
+            <img src="~/imagenes/planta.jfif" class="card-img-top" alt="@planta.NombreComun">
+        }      
+        <div class="card-body">
+            <h3 class="card-text"><a asp-page="/Plantas/Detalles" asp-route-id="@planta.PlantaId">@planta.NombreComun</a></h3>
+            <h5 class="card-text">@planta.NombreComun</h5>
+            <h3>@planta.NombreCientifico</h3>  
+            <a asp-area="" asp-page="Edit" asp-route-id="@planta.PlantaId">
+                <h3 class="card-text">Editar</h3>
+            </a>
+        </div>
+       
+        <button type="submit" name="btneditar"><a asp-page="Edit" asp-route-id="@planta.PlantaId">Editar</a></button>
+        
+    </div>
+}
+
+

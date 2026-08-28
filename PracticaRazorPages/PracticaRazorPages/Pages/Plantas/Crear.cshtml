@@ -1,0 +1,34 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.CrearModel
+@{
+}
+
+<form method="post">
+    <input asp-for="Planta.PlantaId" type="hidden"/>
+    <div asp-validation-summary="All"></div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.NombreComun" class="form-control">Nombre Comun</label> <br />
+        <input asp-for="Planta.NombreComun" class="form-control" placeholder="Nombre Comun">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.NombreCientifico" class="form-control">Nombre Cientifico</label> <br />
+        <input asp-for="Planta.NombreCientifico" class="form-control" placeholder="Nombre Cientifico">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Planta.Categoria" class="form-control">Categoria</label> <br />
+        <input asp-for="Planta.Categoria" class="form-control" placeholder="Categoria">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Planta.CorrreoEncargado" class="form-control">Correo Encargado</label> <br />
+        <input asp-for="Planta.CorrreoEncargado" class="form-control" placeholder="CorrreoEncargado">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Planta.Foto" class="form-control">Foto</label> <br />
+        <input asp-for="Planta.Foto" class="form-control" placeholder="Foto">
+    </div>
+
+    <button type="submit" value="Crear" name="btncrear">Crear</button>  
+    <button type="submit" value="Index" name="btncrear">Index</button>
+</form>

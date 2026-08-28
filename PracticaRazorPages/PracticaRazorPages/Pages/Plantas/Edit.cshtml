@@ -1,0 +1,44 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.EditModel
+@{
+}
+
+<form>
+    <input asp-for="Planta.PlantaId" type="hidden"/>
+
+    <div class="mb-3">
+        <label asp-for="Planta.NombreComun" class="form-control">Nombre Comun</label> <br />
+        <input asp-for="Planta.NombreComun" class="form-control" placeholder="Nombre Comun">
+
+        <span asp-validation-for="Planta.NombreComun" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.NombreCientifico" class="form-control">Nombre Cientifico</label> <br />
+        <input asp-for="Planta.NombreCientifico" class="form-control" placeholder="Nombre Cientifico">
+
+        <span asp-validation-for="Planta.NombreCientifico" class="text-danger small"></span>
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Planta.Categoria" class="form-control">Categoria</label> <br />
+        <input asp-for="Planta.Categoria" class="form-control" placeholder="Categoria">
+
+        <span asp-validation-for="Planta.Categoria" class="text-danger small"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Planta.CorrreoEncargado" class="form-control">Correo Encargado</label> <br />
+        <input asp-for="Planta.CorrreoEncargado" class="form-control" placeholder="CorrreoEncargado">
+
+        <span asp-validation-for="Planta.CorrreoEncargado" class="text-danger small"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Planta.Foto" class="form-control">Foto</label> <br />
+        <input asp-for="Planta.Foto" class="form-control" placeholder="Foto">
+
+        <span asp-validation-for="Planta.Foto" class="text-danger small"></span>
+    </div>
+    <button type="subnit" value="Guardar" name="btnguardar">Guardar Edit</button>
+</form>
+
+
