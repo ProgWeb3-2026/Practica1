@@ -14,13 +14,34 @@
         }
         else
         {
-            <img src="~/ imagenes / esgarden.jfif  " class="card - img - top" alt="Imagen por defecto">
+            
+            <div class="card" style="width: 18rem;">
+                <img src="~/ imagenes / esgarden.jfif  " class="card - img - top" alt="Imagen por defecto">
+             
+            </div>
+
+
+
+
+
+
         }
 
         <div class="card-body">
             <h5 class="card-title">@Planta.NombreComun</h5>
-            <p class="card-text">@Planta.NombreCientifico</p>
-            <p class="card-text">@Planta.Categoria</p>
+            
+               
+       
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">@Planta.NombreCientifico</li>
+                <li class="list-group-item">@Planta.Categoria</li>
+                
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Editar</a>
+                <a href="#" class="card-link">Crear</a>
+            </div>
+            
         </div>
     </div>
 }
