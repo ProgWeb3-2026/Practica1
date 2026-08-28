@@ -4,7 +4,7 @@ namespace PracticaRazorPages.Models
 {
     public class ModeloPlanta
     {
-        public int PlantaId { get; set; }
+        public int? PlantaId { get; set; }
 
         [Required(ErrorMessage = "El nombre comun es un campo requerido")]
         [StringLength(200,ErrorMessage = "Maximo de 200")]
@@ -14,12 +14,12 @@ namespace PracticaRazorPages.Models
         [StringLength(300, ErrorMessage = "Maximo de 300")]
         public string NombreCientifico { get; set; }
 
-        public string Categoria { get; set; }
+        public string? Categoria { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Se requiere un correo ekectronico")]
         [EmailAddress]
         public string CorreoEncargado { get; set; }
 
-        public string Foto { get; set; }
+        public string? Foto { get; set; }
     }
 }
