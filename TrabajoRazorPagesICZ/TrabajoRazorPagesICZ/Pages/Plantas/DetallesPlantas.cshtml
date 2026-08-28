@@ -3,7 +3,7 @@
 @{
 }
 
-Detalles de la planta son los siguientes:
+<h2>Detalles de la planta son los siguientes:</h2>
 
 @if (!string.IsNullOrWhiteSpace(@Model.Planta.Foto))
 {
@@ -19,3 +19,4 @@ else
     <h3 class="card-text">@Model.Planta.NombreComun</h3>
     <p>@Model.Planta.NombreCientifico</p>
 </div>
+<a asp-area="" asp-page="Index" class="link-info">Volver al index</a>
