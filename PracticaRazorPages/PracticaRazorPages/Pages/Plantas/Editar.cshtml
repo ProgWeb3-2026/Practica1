@@ -10,21 +10,29 @@
     <div>
         <label asp-for="EditarPlanta.NombreComun" class="form-label">Nombre Comun</label>
         <input asp-for="EditarPlanta.NombreComun" class="form-control" placeholder="Nombre Comun">
+
+        <span asp-validation-for="EditarPlanta.NombreComun" class="text-danger small"></span>
     </div>
 
     <div>
         <label asp-for="EditarPlanta.NombreCientifico" class="form-label">Nombre Cientifico</label>
         <input asp-for="EditarPlanta.NombreCientifico" class="form-control" placeholder="Nombre Cientifico">
+
+        <span asp-validation-for="EditarPlanta.NombreCientifico" class="text-danger small"></span>
     </div>
 
     <div>
         <label asp-for="EditarPlanta.Categoria" class="form-label">Categoria</label>
         <input asp-for="EditarPlanta.Categoria" class="form-control" placeholder="Categoria">
+
+        <span asp-validation-for="EditarPlanta.Categoria" class="text-danger small"></span>
     </div>
 
      <div>
-        <label asp-for="EditarPlanta.Categoria" class="form-label">Correo Encargado</label>
+        <label asp-for="EditarPlanta.CorreoEncargado" class="form-label">Correo Encargado</label>
         <input asp-for="EditarPlanta.CorreoEncargado" class="form-control" placeholder="Correo Encargado">
+
+        <span asp-validation-for="EditarPlanta.CorreoEncargado" class="text-danger small"></span>
      </div>
 
      <div>
@@ -33,5 +41,6 @@
      </div>
 
     <button type="submit" value="Guardar" name="btnGuardar">Guardar Cambios</button>
+    <a asp-area="" asp-page="Index" class="link-info form-control">Volver al index</a>    
 </div>
 </form>

@@ -5,6 +5,9 @@
 
 <h1>Bienvenido Wacho, este es tu modulo de plantas</h1>
 
+
+<a asp-area="" asp-page="Crear" class="link-info form-control">Crear Planta</a>
+
 @foreach (var planta in Model.Plantas)
 {
     <div class="card" style="width: 18rem;" >
@@ -17,8 +20,14 @@
             <img src="~/imagenes/iconoplanta.png" class="card-img-top" alt="@planta.NombreComun">
         }
         <div class="card-body">
-            <h3 class="card-text">@planta.NombreComun</h3>
+            <a asp-area="" asp-page="Edit" asp-route-id="@planta.PlantaId">
+                <h3 class="card-text">@planta.NombreComun</h3>
+            </a>
+     
+            <a asp-area="" asp-page="Editar" asp-route-id="@planta.PlantaId" class="link-info form-control">Editar</a>
             <h5 class="card-text">@planta.NombreCientifico</h5>
+            
+            <a asp-area="" asp-page="Eliminar" asp-route-id="@planta.PlantaId" class="link-info form-control">Eliminar Planta</a>
         </div>
     </div>
 }

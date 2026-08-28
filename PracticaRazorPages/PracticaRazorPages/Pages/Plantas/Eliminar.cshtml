@@ -1,0 +1,42 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.EliminarModel
+@{
+}
+
+<h2>Eliminar Planta</h2>
+
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Nombre Común</label>
+        <input asp-for="EliminarPlanta.NombreComun" class="form-control" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Nombre Científico</label>
+        <input asp-for="EliminarPlanta.NombreCientifico" class="form-control" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Categoría</label>
+        <input asp-for="EliminarPlanta.Categoria" class="form-control" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Correo Encargado</label>
+        <input asp-for="EliminarPlanta.CorreoEncargado" class="form-control" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Foto</label>
+        <input asp-for="EliminarPlanta.Foto" class="form-control" readonly>
+    </div>
+
+
+    <input type="hidden" asp-for="EliminarPlanta.PlantaId" />
+
+    <button type="submit" >Eliminar</button>
+
+</form>
+
+<a asp-area="" asp-page="Index" class="link-info form-control">Volver al index</a>
