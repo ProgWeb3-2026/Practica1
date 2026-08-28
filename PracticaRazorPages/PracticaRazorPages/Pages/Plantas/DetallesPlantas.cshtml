@@ -1,6 +1,7 @@
 ﻿@page
 @model PracticaRazorPages.Pages.Plantas.DetallesPlantasModel
 @{
+    ViewData["Title"] = "DETALLES";
 }
 
 
@@ -16,3 +17,7 @@
         <h3 class="card-title">@Model.Planta.NombreComun</h3>
         <h5>@Model.Planta.NombreCientifico</h5>
     </div>
+    <br />
+<a asp-area="" asp-page="/Plantas/Index" class="link-info">
+    <button>VOLVER</button>
+</a>

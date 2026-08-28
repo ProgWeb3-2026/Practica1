@@ -1,8 +1,9 @@
 ﻿@page
-@model PracticaRazorPages.Pages.Plantas.EditPlantaModel
+@model PracticaRazorPages.Pages.Plantas.CreatePlantaModel
 @{
-    ViewData["Title"] = "EDITAR";
+    ViewData["Title"] = "CREAR";
 }
+
 <form method="post">
     <input asp-for="Planta.PlantaId" type="hidden" />
     <div class="mb-3">
@@ -31,7 +32,7 @@
         <input asp-for="Planta.Foto" class="form-control" placeholder="Foto">
         <span asp-validation-for="Planta.Foto" class="text-danger"></span>
     </div>
-    <button type="submit" value="Guardar" name="btnGuardar">Guardar</button>
+    <button type="submit" value="Guardar" name="btnGuardar">CREAR</button>
     <br />
-    <a asp-area="" asp-page="Index" class="link-info">VOLVER</a>
+    <a asp-area="" asp-page="/Plantas/Index" class="link-info">VOLVER</a>
 </form>

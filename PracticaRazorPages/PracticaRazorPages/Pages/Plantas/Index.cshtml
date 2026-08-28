@@ -1,10 +1,12 @@
 ﻿@page
 @model PracticaRazorPages.Pages.Plantas.IndexModel
 @{
+    ViewData["Title"] = "PLANTAS";
 }
 
-
 <h1>Bienvenido Usuario a tu modulo de Plantas</h1>
+
+<a asp-area="" asp-page="CreatePlanta" class="link-info form-control">CREAR PLANTA</a>
 
 @foreach (var planta in Model.Plantas)
 {
@@ -21,7 +23,14 @@
         <div class="card-body">
             <h3 class="card-title">@planta.NombreComun</h3>
             <h5>@planta.NombreCientifico</h5>
+            <div class="card-body">
+                <a asp-area="" asp-page="DetallesPlantas" asp-route-Id="@planta.PlantaId">
+                    <h3 class="card-text">@planta.NombreComun</h3>
+                </a>
+                <a asp-area="" asp-page="EditPlanta" asp-route-id="@planta.PlantaId" class="link-info form-control">EDITAR</a>
+                <h5>@planta.NombreCientifico</h5>
+            </div>
         </div>
 
     </div>
-}
+}<br />
