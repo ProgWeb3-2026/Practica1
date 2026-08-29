@@ -1,0 +1,66 @@
+﻿@page
+@model PracticaBase.Pages.PracticaEvento.IndexModel
+<h1>Gestión de Eventos</h1>
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Mensaje"]
+    </div>
+}
+<p>
+    <a asp-page="Crear" class="btn btn-primary">
+        Nuevo Evento
+    </a>
+</p>
+@if (Model.Eventos.Count == 0)
+{
+    <div class="alert alert-info">
+        No existen eventos registrados.
+    </div>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Lugar</th>
+                <th>Capacidad</th>
+                <th>Tipo de Evento</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var evento in Model.Eventos)
+            {
+                <tr>
+                    <td>@evento.Nombre</td>
+                    <td>
+                        @evento.Fecha.ToString("dd/MM/yyyy")
+                    </td>
+                    <td>@evento.Lugar</td>
+                    <td>@evento.Capacidad</td>
+                    <td>@evento.TipoEvento</td>
+                    <td>
+                        <a asp-page="Detalle"
+                           asp-route-id="@evento.Id"
+                           class="btn btn-info btn-sm">
+                            Ver
+                        </a>
+                        <a asp-page="Editar"
+                           asp-route-id="@evento.Id"
+                           class="btn btn-warning btn-sm">
+                            Editar
+                        </a>
+                        <a asp-page="Eliminar"
+                           asp-route-id="@evento.Id"
+                           class="btn btn-danger btn-sm">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

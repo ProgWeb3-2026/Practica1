@@ -1,0 +1,22 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.CarasteristicasModel
+@{
+}
+
+
+
+@if (!string.IsNullOrWhiteSpace(@Model.Planta.foto)) /*!para negar que no esta vacio o tenga espacio vacio pondra la imgane normal*/
+{
+    <img src="@Model.Planta.foto" class="card-img-top" alt="@Model.Planta.NombreComun" />
+}
+else
+{
+    <img src="~/imagenes/planta.jfif" class="card-img-top" alt="@Model.Planta.NombreComun" />
+}
+
+<div class="Card-text">
+    <h3 class="card-text">@Model.Planta.NombreComun</h3>
+    <h5>@Model.Planta.NombreCientifico</h5>
+</div>
+
+</div>

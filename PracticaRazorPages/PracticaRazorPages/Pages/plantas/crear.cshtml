@@ -1,0 +1,46 @@
+﻿@page
+@model PracticaRazorPages.Pages.Plantas.CrearModel
+@{
+}
+
+<form method="post">
+    <input asp-for="Planta.PlantaId" type="hidden" />
+
+    <div class="mb-3">
+        <label asp-for="Planta.NombreComun" class="form-label">Nombre comun</label>
+        <input asp-for=Planta.NombreComun" class="form-label" placeholder="Nombre Comun">
+
+        <span asp-validation-for="Planta.NombreComun" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.NombreCientifico" class="form-label">Nombre Cientifico</label>
+        <input asp-for=Planta.NombreCientifico" class="form-label" placeholder="Nombre Cientifico">
+
+        <span asp-validation-for="Planta.NombreCientifico" class="text-danger small"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.Categoria" class="form-label"> Categoria</label>
+        <input asp-for=Planta.Categoria" class="form-label" placeholder=" Categoria">
+
+        <span asp-validation-for="Planta.Categoria" class="text-danger small"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.CorreoEncargado" class="form-label">Correo encargado</label>
+        <input asp-for=Planta.CorreoEncargado" class="form-label" placeholder="Correo encargado">
+
+        <span asp-validation-for="Planta.CorreoEncargado" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Planta.foto" class="form-label">Foto</label>
+        <input asp-for=Planta.foto" class="form-label" placeholder="Foto">
+
+        <span asp-validation-for="Planta.foto" class="text-danger small"></span>
+    </div>
+    <button type="submit" value="Crear" name="">Crear</button>
+</form>
