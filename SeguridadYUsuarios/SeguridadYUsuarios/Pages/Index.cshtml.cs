@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace PracticaRazorPages.Pages.Plantas
+namespace SeguridadYUsuarios.Pages
 {
-    public partial class CrearModel : PageModel
+    public class IndexModel : PageModel
     {
-
         public void OnGet()
         {
+
         }
     }
 }
