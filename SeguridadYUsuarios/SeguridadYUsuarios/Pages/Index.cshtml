@@ -1,0 +1,62 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-light">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <h1 class="display-4 fw-bold lh-1 text-dark mb-3">Bienvenidos a Seguridad y Usuarios</h1>
+            <p class="lead text-muted">
+                Gestiona accesos, roles y perfiles de forma centralizada, segura y eficiente. Una plataforma diseñada para proteger tus datos y simplificar la administración.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                <a href="#caracteristicas" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Comenzar</a>
+                <a href="https://microsoft.com" target="_blank" class="btn btn-outline-secondary btn-lg px-4">
+                    Saber más sobre ASP.NET
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg rounded-end d-none d-lg-block bg-secondary" style="min-height: 300px; max-height: 360px;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyMQS1f0j4jBhailVsK2q6a5l05KF-2Y8OS-TANseiIdkynKEoOxpCu00&s=10"
+                 alt="Seguridad Informática"
+                 class="img-fluid w-100 h-100 object-fit-cover" />
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container py-5" id="caracteristicas">
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+
+        <div class="feature col text-center p-3">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 rounded-circle" style="width: 4rem; height: 4rem;">
+                <span class="material-icons">🔑</span>
+            </div>
+            <h3 class="fs-4 text-body-emphasis">Control de Accesos</h3>
+            <p>Administra quién entra a la plataforma asignando permisos específicos a cada usuario de forma granular.</p>
+        </div>
+
+
+        <div class="feature col text-center p-3">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-success bg-gradient fs-2 mb-3 rounded-circle" style="width: 4rem; height: 4rem;">
+                <span class="material-icons">👥</span>
+            </div>
+            <h3 class="fs-4 text-body-emphasis">Gestión de Usuarios</h3>
+            <p>Modifica perfiles, restablece contraseñas y mantén el registro de tus colaboradores actualizado.</p>
+        </div>
+
+        
+        <div class="feature col text-center p-3">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-warning bg-gradient fs-2 mb-3 rounded-circle" style="width: 4rem; height: 4rem;">
+                <span class="material-icons">📊</span>
+            </div>
+            <h3 class="fs-4 text-body-emphasis">Auditoría y Reportes</h3>
+            <p>Visualiza el historial de inicios de sesión y acciones críticas del sistema para garantizar la seguridad.</p>
+        </div>
+
+    </div>
+</div>
