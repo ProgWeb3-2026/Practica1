@@ -8,34 +8,39 @@
     <input asp-for="Planta.plantaId" type="hidden"/>
     <div class="mb-3">
         <label asp-for="Planta.nombrecomun" class="form-label">nombre comun</label>
-         <input asp-for="Planta.nombrecomun" class="form-control" placeholder="nombre comun">nombre comun>
-</div>
+         <input asp-for="Planta.nombrecomun" class="form-control" placeholder="nombre comun">nombre comun
+         <span asp-validation-for="Planta.nombrecomun" class="text-danger small"></span>
+    </div>
 
 
     <div class="mb-3">
         <label asp-for="Planta.nombrecientifico" class="form-label">nombre comun</label>
-        <input asp-for="Planta.nombrecientifico" class="form-control" placeholder="nombre comun">nombre comun>
-        </div>
+        <input asp-for="Planta.nombrecientifico" class="form-control" placeholder="nombre cientifico">nombre cientifico
+        <span asp-validation-for="Planta.nombrecientifico" class="text-danger small"></span>
+    </div>
 
 
-        <div class="mb-3">
-            <label asp-for="Planta.categoria" class="form-label">nombre comun</label>
-            <input asp-for="Planta.categoria" class="form-control" placeholder="nombre comun">nombre comun>
-            </div>
+    <div class="mb-3">
+         <label asp-for="Planta.categoria" class="form-label">nombre comun</label>
+         <input asp-for="Planta.categoria" class="form-control" placeholder="categoria">categoria
+         <span asp-validation-for="Planta.categoria" class="text-danger small"></span>
+     </div>
 
 
-            <div class="mb-3">
-                <label asp-for="Planta.correoEncargado" class="form-label">nombre comun</label>
-                <input asp-for="Planta.correoEncargado" class="form-control" placeholder="nombre comun">nombre comun>
-                </div>
+     <div class="mb-3">
+           <label asp-for="Planta.correoEncargado" class="form-label">nombre comun</label>
+                    <input asp-for="Planta.correoEncargado" class="form-control" placeholder="correo encargado">correo encargado
+            <span asp-validation-for="Planta.correoEncargado" class="text-danger small"></span>
+     </div>
 
-                <div class="mb-3">
-                    <label asp-for="Planta.foto" class="form-label">nombre comun</label>
-                    <input asp-for="Planta.foto" class="form-control" placeholder="nombre comun">nombre comun>
-                    </div>
+     <div class="mb-3">
+          <label asp-for="Planta.foto" class="form-label">nombre comun</label>
+          <input asp-for="Planta.foto" class="form-control" placeholder="foto">foto
+          <span asp-validation-for="Planta.foto" class="text-danger small"></span>
+     </div>
 
 
-                <button type="submit" value="guardar" name="btnguardar"></button>
+      <button type="submit" value="guardar" name="btnguardar"></button>
 
-
+        <a asp-area="" asp-page="Index" class="link-info">volver al index</a>
 </form>

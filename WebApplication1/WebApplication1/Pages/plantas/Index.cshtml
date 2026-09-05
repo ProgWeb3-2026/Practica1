@@ -5,6 +5,8 @@
 
 <h2>bienvenido usuario a tu modulo de plantas</h2> 
 
+<a asp-area="" asp-page="crear" class="link-info form-control">Crear nueva planta</a>
+
 @foreach (var planta in Model.plantas)
 {
     <div class="card" style="width: 18rem;">
@@ -17,8 +19,13 @@
             <img src="~/imagenes/planta.jpg class="card - img - top" alt="@planta.nombrecomun">
         }
         <div class="card-body">
-            <h3 class="card-text">@planta.nombrecomun</h3>
+            <a asp-area="" asp-page="detalle" asp-route-id="@planta.plantaId">
+                <h3 class="card-text">@planta.nombrecomun</h3>
+            </a>
+
+                <a asp-area="" asp-page="edits"asp-route-id="@planta.plantaId"class="link-info form-control">editar</a>
             <h5>@planta.nombrecientifico</h5>
         </div>
+            <a asp-area="" asp-page="Index" class="link-info">volver al index</a>
     </div>
 }

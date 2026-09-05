@@ -17,7 +17,9 @@ namespace WebApplication1.models
 
         public string categoria { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "el nombre categoria es un campo requerido ")]
+        [StringLength(300, ErrorMessage = "maximo de 300")]
+
 
         public string correoEncargado { get; set; }
 
