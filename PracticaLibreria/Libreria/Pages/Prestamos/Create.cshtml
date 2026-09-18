@@ -1,0 +1,59 @@
+﻿@page
+@model Libreria.Pages.Prestamos.CreateModel
+@{
+    ViewData["Title"] = "Crear Préstamo";
+}
+
+<h1>Registrar Préstamo</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Prestamo.CodigoPrestamo" class="form-label"></label>
+                <input asp-for="Prestamo.CodigoPrestamo" class="form-control" />
+                <span asp-validation-for="Prestamo.CodigoPrestamo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Prestamo.FechaPrestamo" class="form-label"></label>
+                <input asp-for="Prestamo.FechaPrestamo" class="form-control" type="date" />
+                <span asp-validation-for="Prestamo.FechaPrestamo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Prestamo.FechaDevolucion" class="form-label"></label>
+                <input asp-for="Prestamo.FechaDevolucion" class="form-control" type="date" />
+                <span asp-validation-for="Prestamo.FechaDevolucion" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Prestamo.Estado" class="form-label"></label>
+                <select asp-for="Prestamo.Estado" class="form-select">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Devuelto">Devuelto</option>
+                    <option value="Vencido">Vencido</option>
+                </select>
+                <span asp-validation-for="Prestamo.Estado" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Prestamo.Observaciones" class="form-label"></label>
+                <textarea asp-for="Prestamo.Observaciones" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Prestamo.Observaciones" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-page="Index" class="btn btn-secondary">Volver al Listado</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

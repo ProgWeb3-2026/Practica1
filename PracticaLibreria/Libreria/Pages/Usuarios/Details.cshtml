@@ -1,0 +1,32 @@
+﻿@page
+@model Libreria.Pages.Usuarios.DetailsModel
+@{
+    ViewData["Title"] = "Detalles del Usuario";
+}
+
+<h1>Detalles del Usuario</h1>
+<hr />
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Usuario.Nombre)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Usuario.Nombre)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Usuario.Email)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Usuario.Email)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Usuario.Telefono)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Usuario.Telefono)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Usuario.Direccion)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Usuario.Direccion)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Usuario.FechaRegistro)</dt>
+        <dd class="col-sm-9">@Model.Usuario.FechaRegistro.ToString("dd/MM/yyyy")</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Usuario.Id" class="btn btn-warning">Editar</a>
+    <a asp-page="./Index" class="btn btn-secondary">Volver al Listado</a>
+</div>

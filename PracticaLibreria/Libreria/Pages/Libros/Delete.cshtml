@@ -1,0 +1,34 @@
+﻿@page
+@model Libreria.Pages.Libros.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Libro";
+}
+
+<h1>Eliminar Libro</h1>
+<h3 class="text-danger">¿Está seguro de que desea eliminar este libro?</h3>
+<hr />
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Libro.Titulo)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Libro.Titulo)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Libro.Autor)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Libro.Autor)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Libro.ISBN)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Libro.ISBN)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Libro.AnioPublicacion)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Libro.AnioPublicacion)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Libro.PrecioAlquiler)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Libro.PrecioAlquiler)</dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Libro.Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

@@ -1,0 +1,34 @@
+﻿@page
+@model Libreria.Pages.Prestamos.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Préstamo";
+}
+
+<h1>Eliminar Préstamo</h1>
+<h3 class="text-danger">¿Está seguro de que desea eliminar este préstamo?</h3>
+<hr />
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Prestamo.CodigoPrestamo)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Prestamo.CodigoPrestamo)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Prestamo.FechaPrestamo)</dt>
+        <dd class="col-sm-9">@Model.Prestamo.FechaPrestamo.ToString("dd/MM/yyyy")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Prestamo.FechaDevolucion)</dt>
+        <dd class="col-sm-9">@Model.Prestamo.FechaDevolucion.ToString("dd/MM/yyyy")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Prestamo.Estado)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Prestamo.Estado)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Prestamo.Observaciones)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Prestamo.Observaciones)</dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Prestamo.Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

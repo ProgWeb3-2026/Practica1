@@ -1,0 +1,41 @@
+﻿@page
+@model Libreria.Pages.Usuarios.IndexModel
+@{
+    ViewData["Title"] = "Listado de Usuarios";
+}
+
+<h1 class="mb-3">Listado de Usuarios</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Registrar Nuevo Usuario</a>
+</p>
+
+<table class="table table-striped table-hover mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Usuario[0].Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Usuario[0].Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Usuario[0].Telefono)</th>
+            <th>@Html.DisplayNameFor(model => model.Usuario[0].Direccion)</th>
+            <th>@Html.DisplayNameFor(model => model.Usuario[0].FechaRegistro)</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Usuario)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+                <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
+                <td>@item.FechaRegistro.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detalles</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

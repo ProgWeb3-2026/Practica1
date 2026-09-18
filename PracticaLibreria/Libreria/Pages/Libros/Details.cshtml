@@ -1,0 +1,32 @@
+﻿@page
+@model Libreria.Pages.Libros.DetailsModel
+@{
+    ViewData["Title"] = "Detalles del Libro";
+}
+
+<h1>Detalles del Libro</h1>
+<hr />
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Libro.Titulo)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Libro.Titulo)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Libro.Autor)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Libro.Autor)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Libro.ISBN)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Libro.ISBN)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Libro.AnioPublicacion)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Libro.AnioPublicacion)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Libro.PrecioAlquiler)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Libro.PrecioAlquiler)</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Libro.Id" class="btn btn-warning">Editar</a>
+    <a asp-page="./Index" class="btn btn-secondary">Volver al Listado</a>
+</div>
